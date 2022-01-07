@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKTowns Location Site</title>
+</head>
+
+<body>
+    <h1>Country Page</h1>
+    <h2>Country: {{country}}</h2>
+    <!-- conditions to check if there are any counties or not -->
+    <h2>All Counties: {% if not counties %} No counties {% endif %}</h2>
+    <!-- loop all the counties if there are any -->
+    <ul>
+        {% for cnt in counties %}
+        <li>
+            <a href="/{{ country.name }}/{{cnt.name}}/">
+                {{ cnt.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
