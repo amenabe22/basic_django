@@ -10,15 +10,15 @@
 
 <body>
     <h1>Country Page</h1>
-    <h2>Country: {{country}}</h2>
+    <h2>Country: {{country.country}}</h2>
     <!-- conditions to check if there are any counties or not -->
     <h2>All Counties: {% if not counties %} No counties {% endif %}</h2>
     <!-- loop all the counties if there are any -->
     <ul>
         {% for cnt in counties %}
         <li>
-            <a href="/{{ country.name }}/{{cnt.name}}/">
-                {{ cnt.name }}
+            <a href="/{{ country.country }}/{{cnt.county}}/">
+                {{ cnt.county }}
             </a>
         </li>
         {% endfor %}

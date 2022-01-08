@@ -1,9 +1,10 @@
+from . import views
 from django.urls import path
-from .views import HomePageView, CountryPage, CountyPage, CountyDetail
 
 urlpatterns = [
-    path('', HomePageView.as_view()),
-    path('<str:name>/', CountryPage.as_view()),
-    path('detail/<str:county>/<str:county_name>/', CountyDetail.as_view()),
-    path('<str:country>/<str:county>/', CountyPage.as_view()),
+    path('', views.HomePageView.as_view()),
+    path('add/', views.populate_towns_data, name='add'),
+    path('<str:country>/', views.CountryPage.as_view()),
+    path('detail/<str:county>/<str:county_name>/', views.CountyDetail.as_view()),
+    path('<str:country>/<str:county>/', views.CountyPage.as_view()),
 ]

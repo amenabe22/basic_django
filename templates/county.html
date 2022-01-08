@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ county.name }}</title>
+    <title>{{ country.county }}</title>
 </head>
 
 <body>
     <h1>County Page</h1>
-    <h2>County Name: {{ county.name }}</h2>
+    <h2>County Name: {{ country.county }}</h2>
     <h3>County Names: {% if not names %} No county Names Found {% endif %}</h3>
     <ul>
         {% for cn in names %}
         <li style="font-size: 18px;">
-            <a href="/detail/{{county.name}}/{{cn.name}}/">
+            <a href="/detail/{{country.county}}/{{cn.name}}/">
                 {{ cn.name }}
             </a>
         </li>
